@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Meekdai</title><link>pyae123zd.github.io</link><description>童话是一种生活态度，仅此而已。</description><copyright>Meekdai</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png</url><title>avatar</title><link>pyae123zd.github.io</link></image><lastBuildDate>Mon, 11 Dec 2023 03:00:34 +0000</lastBuildDate><managingEditor>Meekdai</managingEditor><pubDate>Mon, 11 Dec 2023 03:00:34 +0000</pubDate><ttl>60</ttl><webMaster>Meekdai</webMaster><item><title>鲁迅的名言名句</title><link>pyae123zd.github.io/post/lu-xun-de-ming-yan-ming-ju.html</link><description>&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Eureka!!</title><link>https://pyae123zd.github.io</link><description>人类的悲欢并不相通，我只觉得他们吵闹。</description><copyright>Eureka!!</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png</url><title>avatar</title><link>https://pyae123zd.github.io</link></image><lastBuildDate>Mon, 11 Dec 2023 03:03:47 +0000</lastBuildDate><managingEditor>Eureka!!</managingEditor><pubDate>Mon, 11 Dec 2023 03:03:46 +0000</pubDate><ttl>60</ttl><webMaster>Eureka!!</webMaster><item><title>鲁迅的名言名句</title><link>https://pyae123zd.github.io/post/lu-xun-de-ming-yan-ming-ju.html</link><description>&#13;
 # 鲁迅&#13;
 [![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/%E9%B2%81%E8%BF%85lx.jpg/220px-%E9%B2%81%E8%BF%85lx.jpg)](https://zh.wikiquote.org/wiki/File:%E9%B2%81%E8%BF%85lx.jpg)&#13;
 &#13;
-我想：希望本是无所谓有，无所谓无的。</description><guid isPermaLink="true">pyae123zd.github.io/post/lu-xun-de-ming-yan-ming-ju.html</guid><pubDate>Mon, 11 Dec 2023 02:53:59 +0000</pubDate></item><item><title>骚气编程技巧</title><link>pyae123zd.github.io/post/sao-qi-bian-cheng-ji-qiao.html</link><description>&#13;
+我想：希望本是无所谓有，无所谓无的。</description><guid isPermaLink="true">https://pyae123zd.github.io/post/lu-xun-de-ming-yan-ming-ju.html</guid><pubDate>Mon, 11 Dec 2023 02:53:59 +0000</pubDate></item><item><title>骚气编程技巧</title><link>https://pyae123zd.github.io/post/sao-qi-bian-cheng-ji-qiao.html</link><description>&#13;
 ## 工具类&#13;
 &#13;
 - hutool&#13;
@@ -35,4 +35,4 @@
 - [Byte Buddy - runtime code generation for the Java virtual machine](https://bytebuddy.net/#/tutorial)&#13;
 ## 事件驱动&#13;
 - event listener&#13;
-。</description><guid isPermaLink="true">pyae123zd.github.io/post/sao-qi-bian-cheng-ji-qiao.html</guid><pubDate>Mon, 11 Dec 2023 02:35:04 +0000</pubDate></item></channel></rss>
+。</description><guid isPermaLink="true">https://pyae123zd.github.io/post/sao-qi-bian-cheng-ji-qiao.html</guid><pubDate>Mon, 11 Dec 2023 02:35:04 +0000</pubDate></item></channel></rss>
