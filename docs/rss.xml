@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Meekdai</title><link>pyae123zd.github.io</link><description>童话是一种生活态度，仅此而已。</description><copyright>Meekdai</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png</url><title>avatar</title><link>pyae123zd.github.io</link></image><lastBuildDate>Mon, 11 Dec 2023 02:35:29 +0000</lastBuildDate><managingEditor>Meekdai</managingEditor><pubDate>Mon, 11 Dec 2023 02:35:29 +0000</pubDate><ttl>60</ttl><webMaster>Meekdai</webMaster><item><title>骚气编程技巧</title><link>pyae123zd.github.io/post/sao-qi-bian-cheng-ji-qiao.html</link><description>&#13;
+## 工具类&#13;
+&#13;
+- hutool&#13;
+- apache-commons&#13;
+- google-guava&#13;
+&#13;
+## 函数式编程&#13;
+- [Vavr](https://docs.vavr.io/)&#13;
+	- ![Pasted image 20230809191221](https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020230809191221.png)&#13;
+	- ![Pasted image 20230809183348](https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020230809183348.png)&#13;
+## 增强流处理&#13;
+- [StreamEx](https://www.baeldung.com/streamex)&#13;
+&#13;
+## 防御式编程&#13;
+- Optional&#13;
+- Assert&#13;
+## 设计模式封装&#13;
+- Builder&#13;
+- Step Builder&#13;
+- 模版（接口，抽象类）&#13;
+- Pipeline&#13;
+- 门面（facade）&#13;
+## 隐藏实现细节&#13;
+- mapstruct&#13;
+- querydsl&#13;
+- lombok&#13;
+- Converter（转换器）&#13;
+## 字节码增强&#13;
+- [Byte Buddy - runtime code generation for the Java virtual machine](https://bytebuddy.net/#/tutorial)&#13;
+## 事件驱动&#13;
+- event listener&#13;
+。</description><guid isPermaLink="true">pyae123zd.github.io/post/sao-qi-bian-cheng-ji-qiao.html</guid><pubDate>Mon, 11 Dec 2023 02:35:04 +0000</pubDate></item></channel></rss>
