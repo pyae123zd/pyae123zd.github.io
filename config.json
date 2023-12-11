@@ -2,7 +2,7 @@
     "title":"Eureka!!",
     "displayTitle":"Zhaoda",
     "subTitle":"人类的悲欢并不相通，我只觉得他们吵闹。",
-    "homeUrl":"pyae123zd.github.io",
+    "homeUrl":"https://pyae123zd.github.io",
     "avatarUrl":"https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png",
     "faviconUrl":"http://meekdai.com/favicon.ico",
     "singlePage":[],
@@ -16,5 +16,5 @@
     "i18n":"CN",
     "dayTheme":"light",
     "nightTheme":"dark_colorblind",
-    "urlMode":"pinyin",
+    "urlMode":"pinyin"
 }
