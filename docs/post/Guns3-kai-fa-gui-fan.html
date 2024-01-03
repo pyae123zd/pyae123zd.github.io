@@ -13,8 +13,8 @@
         else if(localStorage.getItem("meek_theme")=="light"){document.getElementsByTagName("html")[0].attributes.getNamedItem("data-color-mode").value="light";}
     </script>
     
-<title>骚气编程技巧</title>
-
+<title>Guns3开发规范</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -44,7 +44,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<span class="postTitle">骚气编程技巧</span>
+<span class="postTitle">Guns3开发规范</span>
 <div class="title-right">
 
     <a href="https://pyae123zd.github.io"><button id="buttonHome" class="btn btn-invisible circle" title="首页">
@@ -53,7 +53,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </button></a>
 
-    <a href="https://github.com/pyae123zd/pyae123zd.github.io/issues/1" target="_blank"><button class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/pyae123zd/pyae123zd.github.io/issues/3" target="_blank"><button class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
         </svg>
@@ -69,53 +69,119 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody">
-<h2>工具类</h2>
-<ul>
-<li>hutool</li>
-<li>apache-commons</li>
-<li>google-guava</li>
-</ul>
-<h2>函数式编程</h2>
-<ul>
-<li><a href="https://docs.vavr.io/" rel="nofollow">Vavr</a>
-<ul>
-<li><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020230809191221.png"><img src="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020230809191221.png" alt="Pasted image 20230809191221" style="max-width: 100%;"></a></li>
-<li><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020230809183348.png"><img src="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020230809183348.png" alt="Pasted image 20230809183348" style="max-width: 100%;"></a></li>
-</ul>
-</li>
-</ul>
-<h2>增强流处理</h2>
-<ul>
-<li><a href="https://www.baeldung.com/streamex" rel="nofollow">StreamEx</a></li>
-</ul>
-<h2>防御式编程</h2>
-<ul>
-<li>Optional</li>
-<li>Assert</li>
-</ul>
-<h2>设计模式封装</h2>
-<ul>
-<li>Builder</li>
-<li>Step Builder</li>
-<li>模版（接口，抽象类）</li>
-<li>Pipeline</li>
-<li>门面（facade）</li>
-</ul>
-<h2>隐藏实现细节</h2>
-<ul>
-<li>mapstruct</li>
-<li>querydsl</li>
-<li>lombok</li>
-<li>Converter（转换器）</li>
-</ul>
-<h2>字节码增强</h2>
-<ul>
-<li><a href="https://bytebuddy.net/#/tutorial" rel="nofollow">Byte Buddy - runtime code generation for the Java virtual machine</a></li>
-</ul>
-<h2>事件驱动</h2>
-<ul>
-<li>event listener</li>
-</ul>
+<p>2024-01-03</p>
+<h3>1. 强依赖关系</h3>
+<p>项目基于spring boot架构，所以对spring boot强依赖，另外对hutool工具类，lombok，fastjson强依赖，其他框架不强依赖</p>
+<h3>2. 任何类均可拓展</h3>
+<p>利用<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/primary/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/primary">@primary</a>注解来替换已经装载的spring容器中的bean</p>
+<h3>3.每个模块要有一个常量类</h3>
+<p>常量类用来存放模块名称和异常枚举的步进值，如果本模块异常较多，可以存放多个步进值</p>
+<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-smi">RuleConstants</span> {
+
+    <span class="pl-c">/**</span>
+<span class="pl-c">     * 规则模块的名称</span>
+<span class="pl-c">     */</span>
+    <span class="pl-smi">String</span> <span class="pl-c1">RULE_MODULE_NAME</span> = <span class="pl-s">"kernel-a-rule"</span>;
+
+    <span class="pl-c">/**</span>
+<span class="pl-c">     * 异常枚举的步进值</span>
+<span class="pl-c">     */</span>
+    <span class="pl-smi">String</span> <span class="pl-c1">RULE_EXCEPTION_STEP_CODE</span> = <span class="pl-s">"00"</span>;
+
+}</pre></div>
+<h3>4. 每个模块要有一个异常类</h3>
+<p>异常类要继承ServiceException</p>
+<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">DaoException</span> <span class="pl-k">extends</span> <span class="pl-smi">ServiceException</span> {
+
+    <span class="pl-k">public</span> <span class="pl-smi">DaoException</span>(<span class="pl-smi">AbstractExceptionEnum</span> <span class="pl-s1">exception</span>) {
+        <span class="pl-en">super</span>(<span class="pl-smi">DbConstants</span>.<span class="pl-c1">DB_MODULE_NAME</span>, <span class="pl-s1">exception</span>);
+    }
+
+}</pre></div>
+<h3>5. expander包是对配置表的拓展</h3>
+<p>kernel-d-config模块只负责对系统配置的初始化，新增，删除等操作，不进行对某个具体配置的维护，各个模块需要配置拓展属性时，在各个模块的api模块建立expander包维护</p>
+<h3>6. Bean的装配，尽量在类的构造函数，不要在类的内部用<a class="user-mention notranslate" data-hovercard-type="organization" data-hovercard-url="/orgs/resource/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/resource">@resource</a>或者<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Autowired/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Autowired">@Autowired</a></h3>
+<p>构造函数装配更灵活，如果直接用<a class="user-mention notranslate" data-hovercard-type="organization" data-hovercard-url="/orgs/resource/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/resource">@resource</a>则会交给spring去装配，spring会去找到容器中的相关bean，不如手动的灵活</p>
+<p>多出现在装配的是接口的情况，如果接口有多个实现，很明显用构造函数去装配更合适</p>
+<h3>7. pojo的分包结构</h3>
+<p>pojo下可以分为request（控制器层请求参数的封装），response（控制器层响应参数的封装），param（其他类下参数的封装）</p>
+<p>其中request包下的类以Request结尾，response包下的类以Response结尾，param包下的类以Param结尾</p>
+<p>request包下的类一般会加上参数校验注解，参数校验用的hibernate validator注解</p>
+<p>一般情况，直接用实体返回，减少一些pojo的书写，复杂的返回对象还是要单独封装pojo</p>
+<h3>8，pom中的注释要写清楚，为什么引用这个模块写到每个依赖上边</h3>
+<p>例如，如下写法：</p>
+<div class="highlight highlight-text-xml"><pre class="notranslate"><span class="pl-c"><span class="pl-c">&lt;!--</span>jwt模块<span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span>用来给生成带鉴权的url用<span class="pl-c">--&gt;</span></span>
+&lt;<span class="pl-ent">dependency</span>&gt;
+    &lt;<span class="pl-ent">groupId</span>&gt;com.sedinbj.kernel&lt;/<span class="pl-ent">groupId</span>&gt;
+    &lt;<span class="pl-ent">artifactId</span>&gt;jwt-sdk&lt;/<span class="pl-ent">artifactId</span>&gt;
+    &lt;<span class="pl-ent">version</span>&gt;1.0.0&lt;/<span class="pl-ent">version</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+<h3>9. @ApiResource 上的 path url 写完整的请求url 不要写到类上url</h3>
+<p>以下是错误示例</p>
+<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-c1">@</span><span class="pl-c1">RestController</span>
+<span class="pl-c1">@</span><span class="pl-c1">ApiResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"配置管理"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/system/config/"</span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">SysConfigController</span> {
+
+    <span class="pl-c1">@</span><span class="pl-c1">GetResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"获取配置列表"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/list"</span>)
+    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">pageList</span>() {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    }
+    
+}</pre></div>
+<h3>10. private方法要放到方法最下边</h3>
+<p>在类中 private 方法放到最下边</p>
+<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">ConfigServiceImpl</span> <span class="pl-k">implements</span> <span class="pl-smi">ConfigService</span> {
+
+    <span class="pl-k">public</span> <span class="pl-smi">List</span>&lt;<span class="pl-smi">Long</span>&gt; <span class="pl-en">getList</span>() {
+        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-smi">Object</span> <span class="pl-en">getDeatil</span>() {
+        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    }
+
+    <span class="pl-k">private</span> <span class="pl-smi">Object</span> <span class="pl-en">getOne</span>() {
+        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    }
+
+}</pre></div>
+<h3>11. Controller 中 post get 规范</h3>
+<p>在 Controller 类中所有不涉及到数据变动的接口，例如分页查询、根据主键获取详情等查询接口使用 <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/getresource/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/getresource">@getresource</a> 注解，其余添加、修改、删除接口统一使用 @PostResource 注解 例如</p>
+<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-c1">@</span><span class="pl-c1">RestController</span>
+<span class="pl-c1">@</span><span class="pl-c1">ApiResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"配置管理"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/system/config/"</span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">SysConfigController</span> {
+
+    <span class="pl-c1">@</span><span class="pl-c1">GetResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"获取配置列表"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/list"</span>)
+    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">pageList</span>() {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    }
+
+    <span class="pl-c1">@</span><span class="pl-c1">PostResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"添加配置"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/add"</span>)
+    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">add</span>() {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    }
+
+    <span class="pl-c1">@</span><span class="pl-c1">PostResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"修改配置"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/update"</span>)
+    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">update</span>() {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    }
+
+    <span class="pl-c1">@</span><span class="pl-c1">PostResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"删除配置"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/delete"</span>)
+    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">delete</span>() {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    }
+
+}</pre></div>
+<h3>12. api，枚举，异常等类创建后就尽快提交</h3>
+<p>创建好后直接提交，为了方便别人用，不用别人再创建，防止重复，在创建之前，先拉取一下代码看看别人是否创建了</p>
+<h3>13. 请求参数要加@ChineseDescription注解</h3>
+<h3>14. 请求参数类要继承BaseRequest，实体类继承BaseEntity，Controller方法响应结果统一使用SuccessResponseData封装，若有错误需抛出有实际错误信息的异常</h3>
+<h3>15. service层方法的顺序，先写增改删操作，最后写查询操作</h3>
+<p>service接口和service实现的顺序要一致</p>
+<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-c1">@</span><span class="pl-c1">GetResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"查看详情"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/company/detail"</span>, <span class="pl-s1">responseClass</span> = <span class="pl-smi">CompanyResponse</span>.<span class="pl-k">class</span>)</pre></div>
+<h3>16. 为了方便加业务缓存，所有的dao操作不要直接用xxxMapper</h3>
+<p>统一放在service操作dao，别的层不能直接调用xxxMapper类中的方法。</p>
 </div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
@@ -172,11 +238,7 @@ console.log("\n %c Gmeek last %c https://github.com/Meekdai/Gmeek \n\n", "color:
 
 <script>
 
-cmButton=document.getElementById("cmButton");
-    span=document.createElement("span");
-    span.setAttribute("class","Counter");
-    span.innerHTML="1";
-    cmButton.appendChild(span);
+
 
 function openComments(){
     cm=document.getElementById("comments");

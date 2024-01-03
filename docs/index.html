@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light">
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="人类的悲欢并不相通，我只觉得他们吵闹。">
     <link href="//cdn.staticfile.org/Primer/21.0.7/primer.css" rel="stylesheet" />
     <link rel="icon" href="http://meekdai.com/favicon.ico">
     <script>
@@ -36,6 +37,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .d-flex{min-width:0;}
 .listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
 .listLabels{white-space:nowrap;}
+.listLabels object{max-height:16px;max-width:24px;}
 
 @media (max-width: 600px) {
     body {padding: 8px;}
@@ -50,15 +52,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <body>
     <div id="header">
 <h1>
-    <img src="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png" class="avatar circle" id="avatarImg"><a class="blogTitle">Zhaoda</a></h1>
+    <img src="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">Zhaoda</a></h1>
 <div class="title-right">
-    <a href="/tag.html"><button id="buttonSearch" class="btn btn-invisible circle" title="搜索">
+    <a href="https://pyae123zd.github.io/tag.html"><button id="buttonSearch" class="btn btn-invisible circle" title="搜索">
         <svg class="octicon" width="16" height="16" >
             <path id="pathSearch" fill-rule="evenodd"></path>
         </svg>
     </button></a>
     
-    <a href="/rss.xml" target="_blank"><button id="buttonRSS" class="btn btn-invisible circle" title="RSS">
+    <a href="https://pyae123zd.github.io/rss.xml" target="_blank"><button id="buttonRSS" class="btn btn-invisible circle" title="RSS">
         <svg class="octicon" width="16" height="16" >
             <path id="pathRSS" fill-rule="evenodd"></path>
         </svg>
@@ -73,7 +75,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div style="margin-bottom: 16px;">人类的悲欢并不相通，我只觉得他们吵闹。</div>
 <nav class="SideNav border">
-<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/lu-xun-de-ming-yan-ming-ju.html">
+<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Guns3-kai-fa-gui-fan.html">
+    <div class="d-flex flex-items-center">
+        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
+        </svg>
+        <span class="listTitle">Guns3开发规范</span>
+    </div>
+    <div class="listLabels">
+        
+        <span class="Label LabelName" style="background-color:#46E773"><object><a style="color:#fff" href="https://pyae123zd.github.io/tag.html#开发">开发</a></object></span>
+        <span class="Label LabelTime" style="background-color:#bc4c00">2024-01-03</span>
+    </div>
+</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/lu-xun-de-ming-yan-ming-ju.html">
     <div class="d-flex flex-items-center">
         <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
         </svg>
@@ -81,7 +94,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     </div>
     <div class="listLabels">
         
-        <span class="Label LabelName" style="background-color:#2E5FCE"><object><a style="color:#fff" href="/tag.html#人生">人生</a></object></span>
+        <span class="Label LabelName" style="background-color:#2E5FCE"><object><a style="color:#fff" href="https://pyae123zd.github.io/tag.html#人生">人生</a></object></span>
         <span class="Label LabelTime" style="background-color:#A333D0">2023-12-11</span>
     </div>
 </a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/sao-qi-bian-cheng-ji-qiao.html">
@@ -92,7 +105,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     </div>
     <div class="listLabels">
         <span class="Label" style="background-color:#006b75">1</span>
-        <span class="Label LabelName" style="background-color:#860C15"><object><a style="color:#fff" href="/tag.html#学习">学习</a></object></span>
+        <span class="Label LabelName" style="background-color:#860C15"><object><a style="color:#fff" href="https://pyae123zd.github.io/tag.html#学习">学习</a></object></span>
         <span class="Label LabelTime" style="background-color:#A333D0">2023-12-11</span>
     </div>
 </a>
@@ -100,7 +113,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="footer">Copyright © <span id="year"></span><a href="https://pyae123zd.github.io"> Eureka!! </a>
 <p>
-<span id="runday"></span>Powered by <a href="https://github.com/Meekdai/Gmeek" target="_blank">Gmeek</a>
+<span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
 </p>
 
 <script>
