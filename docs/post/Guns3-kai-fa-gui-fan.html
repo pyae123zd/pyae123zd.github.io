@@ -11,7 +11,7 @@
     </script>
 <meta name="description" content="Guns3开发规范">
 <title>Guns3开发规范</title>
-<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
 
 </head>
 <style>
@@ -72,28 +72,30 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>利用<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/primary/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/primary">@primary</a>注解来替换已经装载的spring容器中的bean</p>
 <h3>3.每个模块要有一个常量类</h3>
 <p>常量类用来存放模块名称和异常枚举的步进值，如果本模块异常较多，可以存放多个步进值</p>
-<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-smi">RuleConstants</span> {
+<pre lang="java" class="notranslate"><code class="notranslate">public interface RuleConstants {
 
-    <span class="pl-c">/**</span>
-<span class="pl-c">     * 规则模块的名称</span>
-<span class="pl-c">     */</span>
-    <span class="pl-smi">String</span> <span class="pl-c1">RULE_MODULE_NAME</span> = <span class="pl-s">"kernel-a-rule"</span>;
+    /**
+     * 规则模块的名称
+     */
+    String RULE_MODULE_NAME = "kernel-a-rule";
 
-    <span class="pl-c">/**</span>
-<span class="pl-c">     * 异常枚举的步进值</span>
-<span class="pl-c">     */</span>
-    <span class="pl-smi">String</span> <span class="pl-c1">RULE_EXCEPTION_STEP_CODE</span> = <span class="pl-s">"00"</span>;
+    /**
+     * 异常枚举的步进值
+     */
+    String RULE_EXCEPTION_STEP_CODE = "00";
 
-}</pre></div>
+}
+</code></pre>
 <h3>4. 每个模块要有一个异常类</h3>
 <p>异常类要继承ServiceException</p>
-<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">DaoException</span> <span class="pl-k">extends</span> <span class="pl-smi">ServiceException</span> {
+<pre lang="java" class="notranslate"><code class="notranslate">public class DaoException extends ServiceException {
 
-    <span class="pl-k">public</span> <span class="pl-smi">DaoException</span>(<span class="pl-smi">AbstractExceptionEnum</span> <span class="pl-s1">exception</span>) {
-        <span class="pl-en">super</span>(<span class="pl-smi">DbConstants</span>.<span class="pl-c1">DB_MODULE_NAME</span>, <span class="pl-s1">exception</span>);
+    public DaoException(AbstractExceptionEnum exception) {
+        super(DbConstants.DB_MODULE_NAME, exception);
     }
 
-}</pre></div>
+}
+</code></pre>
 <h3>5. expander包是对配置表的拓展</h3>
 <p>kernel-d-config模块只负责对系统配置的初始化，新增，删除等操作，不进行对某个具体配置的维护，各个模块需要配置拓展属性时，在各个模块的api模块建立expander包维护</p>
 <h3>6. Bean的装配，尽量在类的构造函数，不要在类的内部用<a class="user-mention notranslate" data-hovercard-type="organization" data-hovercard-url="/orgs/resource/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/resource">@resource</a>或者<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Autowired/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Autowired">@Autowired</a></h3>
@@ -106,76 +108,82 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>一般情况，直接用实体返回，减少一些pojo的书写，复杂的返回对象还是要单独封装pojo</p>
 <h3>8. pom中的注释要写清楚，为什么引用这个模块写到每个依赖上边</h3>
 <p>例如，如下写法：</p>
-<div class="highlight highlight-text-xml"><pre class="notranslate"><span class="pl-c"><span class="pl-c">&lt;!--</span>jwt模块<span class="pl-c">--&gt;</span></span>
-<span class="pl-c"><span class="pl-c">&lt;!--</span>用来给生成带鉴权的url用<span class="pl-c">--&gt;</span></span>
-&lt;<span class="pl-ent">dependency</span>&gt;
-    &lt;<span class="pl-ent">groupId</span>&gt;com.sedinbj.kernel&lt;/<span class="pl-ent">groupId</span>&gt;
-    &lt;<span class="pl-ent">artifactId</span>&gt;jwt-sdk&lt;/<span class="pl-ent">artifactId</span>&gt;
-    &lt;<span class="pl-ent">version</span>&gt;1.0.0&lt;/<span class="pl-ent">version</span>&gt;
-&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+<pre lang="xml" class="notranslate"><code class="notranslate">&lt;!--jwt模块--&gt;
+&lt;!--用来给生成带鉴权的url用--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.sedinbj.kernel&lt;/groupId&gt;
+    &lt;artifactId&gt;jwt-sdk&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
 <h3>9. @ApiResource 上的 path url 写完整的请求url 不要写到类上url</h3>
 <p>以下是错误示例</p>
-<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-c1">@</span><span class="pl-c1">RestController</span>
-<span class="pl-c1">@</span><span class="pl-c1">ApiResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"配置管理"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/system/config/"</span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">SysConfigController</span> {
+<pre lang="java" class="notranslate"><code class="notranslate">@RestController
+@ApiResource(name = "配置管理", path = "/system/config/")
+public class SysConfigController {
 
-    <span class="pl-c1">@</span><span class="pl-c1">GetResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"获取配置列表"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/list"</span>)
-    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">pageList</span>() {
-        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    @GetResource(name = "获取配置列表", path = "/list")
+    public ResponseData pageList() {
+        return new SuccessResponseData();
     }
     
-}</pre></div>
+}
+</code></pre>
 <h3>10. private方法要放到方法最下边</h3>
 <p>在类中 private 方法放到最下边</p>
-<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">ConfigServiceImpl</span> <span class="pl-k">implements</span> <span class="pl-smi">ConfigService</span> {
+<pre lang="java" class="notranslate"><code class="notranslate">public class ConfigServiceImpl implements ConfigService {
 
-    <span class="pl-k">public</span> <span class="pl-smi">List</span>&lt;<span class="pl-smi">Long</span>&gt; <span class="pl-en">getList</span>() {
-        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    public List&lt;Long&gt; getList() {
+        return null;
     }
 
-    <span class="pl-k">public</span> <span class="pl-smi">Object</span> <span class="pl-en">getDeatil</span>() {
-        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    public Object getDeatil() {
+        return null;
     }
 
-    <span class="pl-k">private</span> <span class="pl-smi">Object</span> <span class="pl-en">getOne</span>() {
-        <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+    private Object getOne() {
+        return null;
     }
 
-}</pre></div>
+}
+</code></pre>
 <h3>11. Controller 中 post get 规范</h3>
 <p>在 Controller 类中所有不涉及到数据变动的接口，例如分页查询、根据主键获取详情等查询接口使用 <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/getresource/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/getresource">@getresource</a> 注解，其余添加、修改、删除接口统一使用 @PostResource 注解 例如</p>
-<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-c1">@</span><span class="pl-c1">RestController</span>
-<span class="pl-c1">@</span><span class="pl-c1">ApiResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"配置管理"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/system/config/"</span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-smi">SysConfigController</span> {
+<pre lang="java" class="notranslate"><code class="notranslate">
+@RestController
+@ApiResource(name = "配置管理", path = "/system/config/")
+public class SysConfigController {
 
-    <span class="pl-c1">@</span><span class="pl-c1">GetResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"获取配置列表"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/list"</span>)
-    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">pageList</span>() {
-        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    @GetResource(name = "获取配置列表", path = "/list")
+    public ResponseData pageList() {
+        return new SuccessResponseData();
     }
 
-    <span class="pl-c1">@</span><span class="pl-c1">PostResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"添加配置"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/add"</span>)
-    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">add</span>() {
-        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    @PostResource(name = "添加配置", path = "/add")
+    public ResponseData add() {
+        return new SuccessResponseData();
     }
 
-    <span class="pl-c1">@</span><span class="pl-c1">PostResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"修改配置"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/update"</span>)
-    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">update</span>() {
-        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    @PostResource(name = "修改配置", path = "/update")
+    public ResponseData update() {
+        return new SuccessResponseData();
     }
 
-    <span class="pl-c1">@</span><span class="pl-c1">PostResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"删除配置"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/delete"</span>)
-    <span class="pl-k">public</span> <span class="pl-smi">ResponseData</span> <span class="pl-en">delete</span>() {
-        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-smi">SuccessResponseData</span>();
+    @PostResource(name = "删除配置", path = "/delete")
+    public ResponseData delete() {
+        return new SuccessResponseData();
     }
 
-}</pre></div>
+}
+</code></pre>
 <h3>12. api，枚举，异常等类创建后就尽快提交</h3>
 <p>创建好后直接提交，为了方便别人用，不用别人再创建，防止重复，在创建之前，先拉取一下代码看看别人是否创建了</p>
 <h3>13. 请求参数要加@ChineseDescription注解</h3>
 <h3>14. 请求参数类要继承BaseRequest，实体类继承BaseEntity，Controller方法响应结果统一使用SuccessResponseData封装，若有错误需抛出有实际错误信息的异常</h3>
 <h3>15. service层方法的顺序，先写增改删操作，最后写查询操作</h3>
 <p>service接口和service实现的顺序要一致</p>
-<div class="highlight highlight-source-java"><pre class="notranslate"><span class="pl-c1">@</span><span class="pl-c1">GetResource</span>(<span class="pl-s1">name</span> = <span class="pl-s">"查看详情"</span>, <span class="pl-s1">path</span> = <span class="pl-s">"/company/detail"</span>, <span class="pl-s1">responseClass</span> = <span class="pl-smi">CompanyResponse</span>.<span class="pl-k">class</span>)</pre></div>
+<pre lang="java" class="notranslate"><code class="notranslate">@GetResource(name = "查看详情", path = "/company/detail", responseClass = CompanyResponse.class)
+</code></pre>
 <h3>16. 为了方便加业务缓存，所有的dao操作不要直接用xxxMapper</h3>
 <p>统一放在service操作dao，别的层不能直接调用xxxMapper类中的方法。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
