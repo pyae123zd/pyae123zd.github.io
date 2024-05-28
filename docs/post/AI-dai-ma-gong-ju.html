@@ -77,8 +77,8 @@ public class WordFiller {
             for (XWPFParagraph p : doc.getParagraphs()) {
                 for (XWPFRun r : p.getRuns()) {
                     String text = r.getText(0);
-                    if (text != null && text.contains("{" + name + "}")) {
-                        text = text.replace("{" + name + "}", value.toString());
+                    if (text != null && text.contains('{' + name + '}')) {
+                        text = text.replace('{' + name + '}', value.toString());
                         r.setText(text, 0);
                     }
                 }
@@ -101,7 +101,7 @@ public class WordTemplateUtil {
         for (Map.Entry<String, String> entry : fieldMap.entrySet()) {
             String fieldName = entry.getKey();
             String value = entry.getValue();
-            template = template.replace("{{" + fieldName + "}}", value);
+            template = template.replace('{{' + fieldName + '}}', value);
         }
         return template;
     }
@@ -122,7 +122,7 @@ public class WordTemplateUtil {
             field.setAccessible(true);
             String fieldName = field.getName();
             String value = field.get(entity).toString();
-            template = template.replace("{{" + fieldName + "}}", value);
+            template = template.replace('{{' + fieldName + '}}', value);
         }
         return template;
     }
@@ -161,10 +161,10 @@ public class WordTemplateFiller {
                 List<XWPFRun> runs = paragraph.getRuns();
                 for (XWPFRun run : runs) {
                     String text = run.getText(0);
-                    if (text != null && text.contains("{{" + fieldName + "}}")) {
+                    if (text != null && text.contains('{{' + fieldName + '}}')) {
                         // 替换占位符为字段的实际值
                         Object fieldValue = field.get(entity);
-                        String newValue = fieldValue != null ? fieldValue.toString() : "";
+                        String newValue = fieldValue != null ? fieldValue.toString() : '';
                         run.setText(newValue, 0);
                     }
                 }
@@ -256,7 +256,7 @@ public class WordTemplateFiller {
                     String text = run.getText(0);
                     if (text != null) {
                         for (Map.Entry<String, String> entry : fieldValues.entrySet()) {
-                            text = text.replace("${" + entry.getKey() + "}", entry.getValue());
+                            text = text.replace('${' + entry.getKey() + '}', entry.getValue());
                         }
                         run.setText(text, 0);
                     }
@@ -270,7 +270,7 @@ public class WordTemplateFiller {
                         String text = run.getText(0);
                         if (text != null) {
                             for (Map.Entry<String, String> entry : fieldValues.entrySet()) {
-                                text = text.replace("${" + entry.getKey() + "}", entry.getValue());
+                                text = text.replace('${' + entry.getKey() + '}', entry.getValue());
                             }
                             run.setText(text, 0);
                         }
@@ -289,13 +289,13 @@ public class WordTemplateFiller {
 
     public static void main(String[] args) {
         // 示例用法
-        String templatePath = "path/to/your/template.docx";
-        String outputPath = "path/to/your/output.docx";
+        String templatePath = 'path/to/your/template.docx';
+        String outputPath = 'path/to/your/output.docx';
 
         // 字段名和对应的值
         Map<String, String> fieldValues = Map.of(
-                "FieldName1", "Value1",
-                "FieldName2", "Value2",
+                'FieldName1', 'Value1',
+                'FieldName2', 'Value2',
                 // 添加更多字段
         );
 
@@ -310,7 +310,7 @@ public class WordTemplateFiller {
 - Github Copilot
   ![Pasted image 20240124103118](https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020240124103118.png)
 
-> `100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)`：这个查询关注的是每个实例的CPU使用率。">
+> `100 - (avg by (instance) (irate(node_cpu_seconds_total{mode='idle'}[5m])) * 100)`：这个查询关注的是每个实例的CPU使用率。">
 <meta property="og:title" content="AI代码工具">
 <meta property="og:description" content="---
 date created: 2024-01-11
@@ -380,8 +380,8 @@ public class WordFiller {
             for (XWPFParagraph p : doc.getParagraphs()) {
                 for (XWPFRun r : p.getRuns()) {
                     String text = r.getText(0);
-                    if (text != null && text.contains("{" + name + "}")) {
-                        text = text.replace("{" + name + "}", value.toString());
+                    if (text != null && text.contains('{' + name + '}')) {
+                        text = text.replace('{' + name + '}', value.toString());
                         r.setText(text, 0);
                     }
                 }
@@ -404,7 +404,7 @@ public class WordTemplateUtil {
         for (Map.Entry<String, String> entry : fieldMap.entrySet()) {
             String fieldName = entry.getKey();
             String value = entry.getValue();
-            template = template.replace("{{" + fieldName + "}}", value);
+            template = template.replace('{{' + fieldName + '}}', value);
         }
         return template;
     }
@@ -425,7 +425,7 @@ public class WordTemplateUtil {
             field.setAccessible(true);
             String fieldName = field.getName();
             String value = field.get(entity).toString();
-            template = template.replace("{{" + fieldName + "}}", value);
+            template = template.replace('{{' + fieldName + '}}', value);
         }
         return template;
     }
@@ -464,10 +464,10 @@ public class WordTemplateFiller {
                 List<XWPFRun> runs = paragraph.getRuns();
                 for (XWPFRun run : runs) {
                     String text = run.getText(0);
-                    if (text != null && text.contains("{{" + fieldName + "}}")) {
+                    if (text != null && text.contains('{{' + fieldName + '}}')) {
                         // 替换占位符为字段的实际值
                         Object fieldValue = field.get(entity);
-                        String newValue = fieldValue != null ? fieldValue.toString() : "";
+                        String newValue = fieldValue != null ? fieldValue.toString() : '';
                         run.setText(newValue, 0);
                     }
                 }
@@ -559,7 +559,7 @@ public class WordTemplateFiller {
                     String text = run.getText(0);
                     if (text != null) {
                         for (Map.Entry<String, String> entry : fieldValues.entrySet()) {
-                            text = text.replace("${" + entry.getKey() + "}", entry.getValue());
+                            text = text.replace('${' + entry.getKey() + '}', entry.getValue());
                         }
                         run.setText(text, 0);
                     }
@@ -573,7 +573,7 @@ public class WordTemplateFiller {
                         String text = run.getText(0);
                         if (text != null) {
                             for (Map.Entry<String, String> entry : fieldValues.entrySet()) {
-                                text = text.replace("${" + entry.getKey() + "}", entry.getValue());
+                                text = text.replace('${' + entry.getKey() + '}', entry.getValue());
                             }
                             run.setText(text, 0);
                         }
@@ -592,13 +592,13 @@ public class WordTemplateFiller {
 
     public static void main(String[] args) {
         // 示例用法
-        String templatePath = "path/to/your/template.docx";
-        String outputPath = "path/to/your/output.docx";
+        String templatePath = 'path/to/your/template.docx';
+        String outputPath = 'path/to/your/output.docx';
 
         // 字段名和对应的值
         Map<String, String> fieldValues = Map.of(
-                "FieldName1", "Value1",
-                "FieldName2", "Value2",
+                'FieldName1', 'Value1',
+                'FieldName2', 'Value2',
                 // 添加更多字段
         );
 
@@ -613,7 +613,7 @@ public class WordTemplateFiller {
 - Github Copilot
   ![Pasted image 20240124103118](https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20image%2020240124103118.png)
 
-> `100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)`：这个查询关注的是每个实例的CPU使用率。">
+> `100 - (avg by (instance) (irate(node_cpu_seconds_total{mode='idle'}[5m])) * 100)`：这个查询关注的是每个实例的CPU使用率。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://pyae123zd.github.io/post/AI-dai-ma-gong-ju.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/pyae123zd/PicoRepo/main/img/Pasted%20Image%2020230803150435.png">
@@ -1096,7 +1096,6 @@ function iFrameLoading(){
     }
 }
 </script>
-
 
 
 </html>

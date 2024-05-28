@@ -29,12 +29,12 @@ public interface RuleConstants {
     /**
      * 规则模块的名称
      */
-    String RULE_MODULE_NAME = "kernel-a-rule";
+    String RULE_MODULE_NAME = 'kernel-a-rule';
 
     /**
      * 异常枚举的步进值
      */
-    String RULE_EXCEPTION_STEP_CODE = "00";
+    String RULE_EXCEPTION_STEP_CODE = '00';
 
 }
 ```
@@ -93,10 +93,10 @@ request包下的类一般会加上参数校验注解，参数校验用的hiberna
 
 ```java
 @RestController
-@ApiResource(name = "配置管理", path = "/system/config/")
+@ApiResource(name = '配置管理', path = '/system/config/')
 public class SysConfigController {
 
-    @GetResource(name = "获取配置列表", path = "/list")
+    @GetResource(name = '获取配置列表', path = '/list')
     public ResponseData pageList() {
         return new SuccessResponseData();
     }
@@ -133,25 +133,25 @@ public class ConfigServiceImpl implements ConfigService {
 ```java
 
 @RestController
-@ApiResource(name = "配置管理", path = "/system/config/")
+@ApiResource(name = '配置管理', path = '/system/config/')
 public class SysConfigController {
 
-    @GetResource(name = "获取配置列表", path = "/list")
+    @GetResource(name = '获取配置列表', path = '/list')
     public ResponseData pageList() {
         return new SuccessResponseData();
     }
 
-    @PostResource(name = "添加配置", path = "/add")
+    @PostResource(name = '添加配置', path = '/add')
     public ResponseData add() {
         return new SuccessResponseData();
     }
 
-    @PostResource(name = "修改配置", path = "/update")
+    @PostResource(name = '修改配置', path = '/update')
     public ResponseData update() {
         return new SuccessResponseData();
     }
 
-    @PostResource(name = "删除配置", path = "/delete")
+    @PostResource(name = '删除配置', path = '/delete')
     public ResponseData delete() {
         return new SuccessResponseData();
     }
@@ -174,7 +174,7 @@ public class SysConfigController {
 service接口和service实现的顺序要一致
 
 ```java
-@GetResource(name = "查看详情", path = "/company/detail", responseClass = CompanyResponse.class)
+@GetResource(name = '查看详情', path = '/company/detail', responseClass = CompanyResponse.class)
 ```
 
 ### 16. 为了方便加业务缓存，所有的dao操作不要直接用xxxMapper
@@ -201,12 +201,12 @@ public interface RuleConstants {
     /**
      * 规则模块的名称
      */
-    String RULE_MODULE_NAME = "kernel-a-rule";
+    String RULE_MODULE_NAME = 'kernel-a-rule';
 
     /**
      * 异常枚举的步进值
      */
-    String RULE_EXCEPTION_STEP_CODE = "00";
+    String RULE_EXCEPTION_STEP_CODE = '00';
 
 }
 ```
@@ -265,10 +265,10 @@ request包下的类一般会加上参数校验注解，参数校验用的hiberna
 
 ```java
 @RestController
-@ApiResource(name = "配置管理", path = "/system/config/")
+@ApiResource(name = '配置管理', path = '/system/config/')
 public class SysConfigController {
 
-    @GetResource(name = "获取配置列表", path = "/list")
+    @GetResource(name = '获取配置列表', path = '/list')
     public ResponseData pageList() {
         return new SuccessResponseData();
     }
@@ -305,25 +305,25 @@ public class ConfigServiceImpl implements ConfigService {
 ```java
 
 @RestController
-@ApiResource(name = "配置管理", path = "/system/config/")
+@ApiResource(name = '配置管理', path = '/system/config/')
 public class SysConfigController {
 
-    @GetResource(name = "获取配置列表", path = "/list")
+    @GetResource(name = '获取配置列表', path = '/list')
     public ResponseData pageList() {
         return new SuccessResponseData();
     }
 
-    @PostResource(name = "添加配置", path = "/add")
+    @PostResource(name = '添加配置', path = '/add')
     public ResponseData add() {
         return new SuccessResponseData();
     }
 
-    @PostResource(name = "修改配置", path = "/update")
+    @PostResource(name = '修改配置', path = '/update')
     public ResponseData update() {
         return new SuccessResponseData();
     }
 
-    @PostResource(name = "删除配置", path = "/delete")
+    @PostResource(name = '删除配置', path = '/delete')
     public ResponseData delete() {
         return new SuccessResponseData();
     }
@@ -346,7 +346,7 @@ public class SysConfigController {
 service接口和service实现的顺序要一致
 
 ```java
-@GetResource(name = "查看详情", path = "/company/detail", responseClass = CompanyResponse.class)
+@GetResource(name = '查看详情', path = '/company/detail', responseClass = CompanyResponse.class)
 ```
 
 ### 16. 为了方便加业务缓存，所有的dao操作不要直接用xxxMapper
@@ -617,7 +617,6 @@ function iFrameLoading(){
     }
 }
 </script>
-
 
 
 </html>
